@@ -1,0 +1,18 @@
+clear all;
+close all;
+I=imread('lenna.bmp');
+im=im2double(I);
+im2=im;
+subplot(131);
+imshow(im);
+im2(23,56)=0;
+im2(23,150)=0;
+im2(53,56)=0;
+im2(168,83)=0;
+im2(200,156)=0;
+subplot(132);
+imshow(im2);
+subplot(133);
+h(1:5,1:5)=1/25;
+im3=imfilter(im2,h);
+imshow(im3);
